@@ -74,6 +74,7 @@ def chinese_zodiac():
     print(f"The animal for {year} is {arr[ind]}")
 
 
+# Randomly generates a number between 0 and 101, prompts for user to guess number until they are correct
 def guess_num():
     num = random.randint(0, 101)
     print("This program randomly generates a number from 0 to 100.")
@@ -87,15 +88,17 @@ def guess_num():
             print("Incorrect, please try again")
 
 
+# Prompts for user input of N, outputs NxN multiplication table
 def multiplication_table():
     while True:
-        n = int(input("Enter the table size for the NxN multiplication table (N must be between 0 and 31: "))
-        if 0 < n <= 31:
+        n = input("Enter the table size for the NxN multiplication table (N must be between 0 and 31): ")
+        if n.isnumeric() and 0 < int(n) <= 31:
             break
         else:
             print("N must be between 0 and 31, please enter another number.")
 
     # add 2 to n to allow for extra rows and columns
+    n = int(n)
     n += 2
 
     # Use list comprehension to initialize multidimensional list to represent the table
